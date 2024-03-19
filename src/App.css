@@ -1,27 +1,26 @@
 /* HTML: <div class="loader"></div> */
 .loader {
-  width: 120px;
-  height: 22px;
-  border-radius: 40px;
-  color: rgb(34 197 94 / 50%);
-  border: 2px solid;
+  width: 80px;
+  aspect-ratio: 1;
+  background: 
+    radial-gradient(farthest-side at top,#0000 calc(100% - 21px),lightblue calc(100% - 20px) 99%,#0000) bottom/100% 50%,
+    radial-gradient(farthest-side,lightblue 94%,#0000 ) left /20px 20px,
+    radial-gradient(farthest-side,lightblue 94%,#0000 ) right/20px 20px;
+  background-repeat: no-repeat;
   position: relative;
-  overflow: hidden;
 }
 .loader::before {
   content: "";
   position: absolute;
-  margin: 2px;
-  width: 14px;
-  top: 0;
-  bottom: 0;
-  left: -20px;
-  border-radius: inherit;
-  background: currentColor;
-  box-shadow: -10px 0 12px 3px currentColor;
-  clip-path: polygon(0 5%, 100% 0,100% 100%,0 95%,-30px 50%);
-  animation: l14 1s infinite linear;
+  width: 20px;
+  height: 20px;
+  inset: auto 0 0;
+  margin: auto;
+  border-radius: 50%;
+  background: rgb(34, 197, 94);
+  transform-origin: 50% -20px;
+  animation: l14 1s infinite cubic-bezier(0.5,623,0.5,-623);
 }
-@keyframes l14 {
-  100% {left: calc(100% + 20px)}
+@keyframes l14 { 
+ 100% {transform: rotate(0.5deg)}
 }
